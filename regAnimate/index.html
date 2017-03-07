@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>波点粒子动画</title>
+  <style type="text/css">
+  body {overflow-x: hidden}
+  </style>
+</head>
+
+<body>
+  <canvas id="regId"></canvas>
+  <!--<div id="regCircle"></div>-->
+</body>
+<script src="jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="regAnimation.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+var window_width = $(window).width();
+var window_height = $(window).height();
+
+function regAnimation() {
+
+  var $ele = $('#regId');
+
+  if ($ele[0].getContext) {
+    $('#regId').regAnimation({
+      window_width: window_width,
+      window_height: window_height,
+      window_background: '#fff',
+      star_count: '100',
+      star_color: '#02c5ff',
+      star_depth: '600'
+    });
+  }
+}
+
+regAnimation();
+
+// $(function() {
+//   $('#regCircle').height(window_height - 330).fadeIn(function() {
+//     regAnimation();
+//   });
+// });
+</script>
+
+</html>
